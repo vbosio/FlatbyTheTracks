@@ -1,0 +1,23 @@
+{{!< default}}
+
+<section class="post-section bg-color1 pb-80">
+ <div class="container">
+ <div class="row">
+  <div class="col-md-8 m-auto">
+   <div class="page-wrapper"> 
+    {{#post}}
+     <div class="section-title">
+          <h2 class="pb-5">{{title}}</h2>
+          {{#if feature_image}}
+           <div class="single-thumb"><img src="{{img_url feature_image}}" alt="{{title}}"/></div>
+          {{/if}}
+      </div>
+       <div class="post-content">
+         {{content}}
+       </div>
+      {{/post}}
+    </div>
+  </div>
+ </div>
+</div>
+</section>

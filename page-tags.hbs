@@ -1,0 +1,30 @@
+{{!< default}}  
+
+<section class="post-section bg-color1 pb-80">
+  <div class="container">
+    <div class="section-title text-center">
+      {{#post}}
+         <h2 class="text-uppercase mb-5">{{title}}</h2>
+      {{/post}}
+    </div>
+    <div class="row">
+     {{#get "tags" include="count.posts"}}
+     {{#foreach tags}}
+      <div class="col-md-4 col-sm-6">
+        <div class="themeix-tag-wrapper wow fadeIn" data-wow-duration="1s">
+          <a href="{{url}}">
+            <div class="tag-thumb height-300" style="background-image:url({{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/post-thumb.jpg{{/if}});"></div>
+          </a>
+          <ul class="tag-details list-inline">
+            <li class="list-inline-item">
+              <a href="{{url}}">{{name}} <span class="text-secondary font-normal">( {{ count.posts }} )</span> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {{/foreach}}
+     {{/get}}
+    </div>
+  </div>
+</section>
+<!-- End Post --> 

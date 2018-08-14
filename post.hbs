@@ -1,0 +1,41 @@
+{{!< default}}  
+     {{#post}}
+      <!-- Start Banner -->
+      {{#if feature_image}}
+      <div class="banner-section bg-color1">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10 m-auto">
+                  <div class="single-thumb"><img src="{{img_url feature_image}}" alt="{{title}}"/></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{/if}}
+      <!-- End Banner -->  
+      <!-- Start Post -->
+      <section class="post-section bg-color1">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 m-auto">
+                  <h2>{{title}}</h2>
+                  <div class="post-content">
+                   {{content}}
+                  </div>
+                   <div class="share-options">
+                     {{> 'post_share'}}
+                   </div>
+                  <div class="single-title text-center">
+                     <h3><a href="#" class="comment-toggler">Show Comments</a></h3>
+                  </div>
+				          <div class="disqus-comments comments">
+                    <div class="comments-container hide"> 
+                    {{> 'disqus_comments'}}
+                    </div>
+					       </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- End Post -->	  
+    {{/post}}

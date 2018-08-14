@@ -1,0 +1,11 @@
+{{#get "posts" include="tags,author" limit="1" }}
+{{#foreach posts}}
+{{#author}}
+<div class="about-widget sidebar-widget">
+	<img alt="not found" src="/assets/images/about-thumb.jpg">
+	<h4>About {{name}} </h4>
+	<p>{{#if bio}}{{bio}}{{else}}My mission is, through colours and textures, to create captivating spaces people can connect with and be inspired by.{{/if}}</p><a class="about-btn" href="{{website}}">READ MORE.</a>
+</div>
+{{/author}}
+{{/foreach}}
+{{/get}}

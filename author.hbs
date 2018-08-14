@@ -1,0 +1,41 @@
+{{!< default}}
+
+<!-- Start Post -->
+<section class="post-section bg-color1 section-spacing">
+ <div class="container">
+    <div class="section-title">
+    	{{#author}}
+         <h2 class="text-uppercase">{{name}} POSTS</h2>
+    	{{/author}}
+    </div>
+    <div class="row">
+     {{#foreach posts}}
+       <div class="col-lg-4 col-md-6">
+          <div class="themeix-post-wrapper wow fadeIn" data-wow-duration="1s">
+             <a href="{{url}}"> 
+             	 <div class="post-thumb height-300" style="background-image:url({{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/post-thumb.jpg{{/if}})"></div>
+             </a>
+             <div class="post-details">
+                <ul class="post-meta list-inline">
+                  {{#if tags}}
+                    <li class="list-inline-item">{{tags limit="1"}}</li>
+                  {{/if}}
+                   <li class="list-inline-item">{{date published_at format="DD MMMM Y"}}</li>
+                </ul>
+                <h4><a href="{{url}}">{{title}}</a></h4>
+                <div class="social-share">
+                	{{> 'social_share'}}
+                </div>
+             </div>
+          </div>
+        </div>
+       {{/foreach}}
+       </div>
+       <div class="row">
+         <div class="pagination">
+           {{pagination}}
+         </div>
+       </div>
+   </div>
+</section>
+<!-- End Post -->	  

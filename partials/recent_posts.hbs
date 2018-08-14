@@ -1,0 +1,18 @@
+<div class="sidebar-title">
+	<h4>Recent Post</h4>
+</div>
+<div class="post-widget sidebar-widget">
+   {{#get "posts" limit="5" order="published_at asc"}}
+   {{#foreach posts}}
+	<div class="post-widget-container">
+		<div class="post-widget-thumb">
+			<a href="{{url}}"><img alt="not found" src="{{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/post-widget-thumb.jpg{{/if}}"></a>
+		</div>
+		<div class="post-widget-content">
+			<a href="{{url}}">{{title}}</a>
+			<p>August 21, 2017</p>
+		</div>
+	</div>
+	{{/foreach}}
+  {{/get}}
+</div>

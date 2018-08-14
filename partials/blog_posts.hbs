@@ -1,0 +1,22 @@
+{{#get "posts" limit="8" include="tags"}}
+{{#foreach posts}}
+<div class="col-lg-6">
+	<div class="themeix-post-wrapper wow fadeIn" data-wow-duration="1s">
+		<a href="{{url}}"><div class="post-thumb height-300" style="background-image:url({{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/post-thumb.jpg{{/if}}" alt="{{title}}")">
+		</div></a>
+		<div class="post-details">
+			<ul class="post-meta list-inline">
+				{{#if tags}}
+				  <li class="list-inline-item">{{tags limit="1"}}</li>
+				{{/if}}
+				<li class="list-inline-item">{{date published_at format="D MMM Y"}}</li>
+			</ul>
+			<h4><a href="{{url}}">{{title}}</a></h4>
+            <div class="social-share">
+            	{{> 'social_share'}}
+            </div>
+		</div>
+	</div>
+  </div>
+ {{/foreach}}
+{{/get}}

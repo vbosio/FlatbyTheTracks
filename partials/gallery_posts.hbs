@@ -1,0 +1,25 @@
+<!-- Start Banner -->
+<section class="banner-section bg-color1">
+	<div class="container">
+	  <div class="owl-carousel banner-carousel">
+	  	{{#get "posts" limit="all" include="author"}}
+         {{#foreach posts}}
+           {{#if featured}}
+			<div class="themeix-banner-wrapper">
+				<div class="banner-thumb"><img src="{{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/slider-thumb.jpg {{/if}}" alt="{{title}}"></div>
+				<div class="banner-details">
+					<ul class="banner-meta list-inline">
+						<li class="list-inline-item">{{date published_at format="D MMM Y"}}</li>
+						<li class="list-inline-item">{{author}}</li>
+					</ul>
+					<h4><a href="{{url}}">{{title}}</a></h4>
+					<p>{{excerpt characters="260"}} <a class="banner-btn" href="{{url}}">Read More.</a></p>
+				</div>
+			 </div>
+			{{/if}}
+           {{/foreach}}
+           {{/get}}
+		</div>
+	</div>
+</section>
+<!-- End Banner -->
